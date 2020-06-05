@@ -1,12 +1,7 @@
-ACCURACY = 4
-
-def f(x, y):
-    return x + y
-
-def isEqual(a, b, threshold = 10**(-ACCURACY)):
+def isEqual(a, b, threshold = 10**(-4)):
     return abs(a - b) < threshold
 
-def euler(f, x, y, h, steps, api = False):
+def euler(f, x, y, h, steps, api = False, ACCURACY = 4):
     ''' Euler's Method '''
     result = []
     for i in range(steps):
@@ -22,7 +17,7 @@ def euler(f, x, y, h, steps, api = False):
         for row in result:
             print("{0:.{4}f} {1:.{4}f} {2:.{4}f} {3:.{4}f}".format(*row, ACCURACY))
 
-def modified_euler(f, x, y, h, steps, api = False):
+def modified_euler(f, x, y, h, steps, api = False, ACCURACY = 4):
     ''' Modified Euler's Method '''
     extra = ACCURACY + 1    # calculations are accurate by an additional decimal place
     result = []
@@ -33,7 +28,7 @@ def modified_euler(f, x, y, h, steps, api = False):
         new_y = round(y + h * dy_dx, extra)
         step.append((x, y, dy_dx, dy_dx, new_y))
         x = round(x + h, extra)
-        while not isEqual(y, new_y):
+        while not isEqual(y, new_y, 10**(-ACCURACY)):
             y = new_y
             new_dy_dx = round(f(x, y), extra)
             mean_slope = round((dy_dx + new_dy_dx) / 2, extra)

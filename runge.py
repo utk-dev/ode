@@ -1,9 +1,4 @@
-ACCURACY = 4
-
-def f(x, y):
-    return x + y
-
-def runge(f, x, y, h, steps = 1, api = False):
+def runge(f, x, y, h, steps = 1, api = False, ACCURACY = 4):
     ''' Third Order Runge-Kutta Method '''
     extra = ACCURACY + 1    # calculations are accurate by an additional decimal place
     result = []
@@ -24,7 +19,7 @@ def runge(f, x, y, h, steps = 1, api = False):
             print("x  = {0:.{2}f}, y  = {1:.{2}f}".format(step[1], step[2], ACCURACY))
                   
                   
-def runge_kutta(f, x, y, h, steps = 1, api = False):
+def runge_kutta(f, x, y, h, steps = 1, api = False, ACCURACY = 4):
     ''' Fourth Order Runge-Kutta Method '''
     extra = ACCURACY + 1    # calculations are accurate by an additional decimal place
     result = []

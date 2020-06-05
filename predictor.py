@@ -1,12 +1,7 @@
-ACCURACY = 4
-
-def f(x, y):
-    return (x*x)*(1+y)
-
-def isEqual(a, b, threshold = 10**(-ACCURACY)):
+def isEqual(a, b, threshold = 10**(-4)):
     return abs(a - b) < threshold
 
-def milne(f, X, Y, h, api = False):
+def milne(f, X, Y, h, api = False, ACCURACY = 4):
     "Milne's Method"
     extra = ACCURACY + 1    # calculations are accurate by an additional decimal place
     result = []
@@ -17,7 +12,7 @@ def milne(f, X, Y, h, api = False):
     f4 = round(f(x4, yp), extra)
     yc = round(Y[2] + (h/3)*(F[2]+4*F[3]+f4), extra)          # corrector expression
     result.append((f4, yc))
-    while not isEqual(yp, yc):
+    while not isEqual(yp, yc, 10**(-ACCURACY)):
         yp = yc
         f4 = round(f(x4, yp), extra)
         yc = round(Y[2] + (h/3)*(F[2]+4*F[3]+f4), extra)
@@ -27,9 +22,9 @@ def milne(f, X, Y, h, api = False):
     else:
         print("y_predictor = {0:.{1}f}".format(result[0], ACCURACY))
         for corrector in result[1:]:
-            print("y4 = {0:.{2}f}, y_corrector = {1:.{2}f}".format(*corrector, ACCURACY))
+            print("f4 = {0:.{2}f}, y_corrector = {1:.{2}f}".format(*corrector, ACCURACY))
 
-def adams_bashforth(f, X, Y, h, api = False):
+def adams_bashforth(f, X, Y, h, api = False, ACCURACY = 4):
     "Adams-Bashforth Method"
     extra = ACCURACY + 1    # calculations are accurate by an additional decimal place
     result = []
@@ -40,7 +35,7 @@ def adams_bashforth(f, X, Y, h, api = False):
     f1 = round(f(x1, yp), extra)
     yc = round(Y[3] + (h/24)*(9*f1+19*F[3]-5*F[2]+F[1]), extra)          # corrector expression
     result.append((f1, yc))
-    while not isEqual(yp, yc):
+    while not isEqual(yp, yc, 10**(-ACCURACY)):
         yp = yc
         f1 = round(f(x1, yp), extra)
         yc = round(Y[3] + (h/24)*(9*f1+19*F[3]-5*F[2]+F[1]), extra)

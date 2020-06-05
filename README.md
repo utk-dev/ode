@@ -34,13 +34,11 @@ modified_euler(f, 0, 1, 0.1, 3)
 3. Lets you decide the accuracy of answers:
 
 ```python
->>> ACCURACY = 5	# get answers accuate upto 5 decimal places
->>> milne(f, X, Y, 0.1)
+>>> milne(f, X, Y, 0.1, ACCURACY = 4)
 ...
 0.13174
 ...
->>> ACCURACY = 3	# change accuracy on the fly with ACCURACY global variable
->>> milne(f, X, Y, 0.1)
+>>> milne(f, X, Y, 0.1, ACCURACY = 3)  # change accuracy on the fly
 ...
 0.132
 ...
@@ -72,7 +70,7 @@ modified_euler(f, 0, 1, 0.1, 3)
 
 - Download this repository ... the whole thing.
 - Open and run `ode.py` using Python IDLE **OR** Open a terminal and run `python -i ode.py` **OR** `from ode import *` into your own python script.
-- Head over to the wiki of this repository for learning 'how-to' of various methods.
+- Head over to the [wiki](https://github.com/utk-dev/ode/wiki) of this repository for learning 'how-to' of various methods.
 
 ------
 
