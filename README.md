@@ -34,7 +34,7 @@ modified_euler(f, 0, 1, 0.1, 3)
 3. Lets you decide the accuracy of answers:
 
 ```python
->>> milne(f, X, Y, 0.1, ACCURACY = 4)
+>>> milne(f, X, Y, 0.1, ACCURACY = 5)
 ...
 0.13174
 ...
