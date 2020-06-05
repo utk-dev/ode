@@ -17,7 +17,7 @@ Hence, I have created this small project that works as an answer verifier for th
 ```python
 # Prototypes of various methods are very similar
 euler(function, intial-x, initial-y, h, steps)
-runge_kutta(function, initial-x, inital-y, h, steps)
+runge_kutta(function, initial-x, initial-y, h, steps)
 ...
 ```
 
