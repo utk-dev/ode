@@ -120,5 +120,3 @@ def graeffe(poly, api = False, ACCURACY = 4):
         print("where x² = y, y² = z and z² = u")
         print("γ₁: {0:.{3}f}, γ₂: {1:.{3}f}, γ₃: {2:.{3}f}".format(*result[-2], ACCURACY))
         print("Roots: {0:.{3}f}, {1:.{3}f}, {2:.{3}f}".format(*result[-1], ACCURACY))
-
-graeffe([1, -2, -5, 6])
