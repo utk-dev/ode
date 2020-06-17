@@ -70,7 +70,7 @@ modified_euler(f, 0, 1, 0.1, 3)
 
 - Download this repository ... the whole thing.
 - Open and run `ode.py` using Python IDLE **OR** Open a terminal and run `python -i ode.py` **OR** `from ode import *` into your own python script.
-- Head over to the [wiki](https://github.com/utk-dev/ode/wiki) of this repository for learning 'how-to' of various methods.
+- **<mark>Head over to the [wiki](https://github.com/utk-dev/ode/wiki) of this repository for learning 'how-to' of various methods.</mark>**
 
 ------
 
