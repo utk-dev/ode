@@ -70,7 +70,7 @@ class Matrix:
     def __setitem__(self, index, value):
         self.rows[index] = value
     def __len__(self):
-        return m
+        return self.m
     def __str__(self):
         result = ""
         for row in self.rows:
